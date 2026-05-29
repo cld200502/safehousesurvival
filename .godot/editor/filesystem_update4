@@ -1,0 +1,6 @@
+res://scripts/components/explore_scene.gd
+res://scripts/components/npc_encounter_scene.gd
+res://scripts/main.gd
+res://scripts/components/player.gd
+res://scripts/components/ui_manager.gd
+res://scripts/components/mobile_controls.gd

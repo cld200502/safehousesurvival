@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://test001"]
+
+[ext_resource type="Script" path="res://scripts/game_systems/game_data.gd" id="1_gd"]
+[ext_resource type="Script" path="res://scripts/components/ui_manager.gd" id="2_ui"]
+
+[node name="TestRoot" type="Node2D"]
+
+[node name="GameData" type="Node" parent="."]
+script = ExtResource("1_gd")
+
+[node name="UIManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_ui")
