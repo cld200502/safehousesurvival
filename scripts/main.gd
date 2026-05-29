@@ -968,7 +968,7 @@ ESC      关闭面板  /  切换全屏
 		if Input.is_action_just_pressed("ui_cancel"):
 			started = true
 		# 移动端：点击屏幕任意位置也可开始
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or (OS.has_touchscreen_ui_hint() and Input.is_action_just_pressed("ui_touch")):
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_action_just_pressed("ui_touch"):
 			started = true
 
 	# 

@@ -106,7 +106,7 @@ func start_qte(difficulty = "normal"):
 	if is_instance_valid(qte_panel):
 		qte_panel.visible = true
 	if is_instance_valid(hint_label):
-		if OS.has_touchscreen_ui_hint():
+		if DisplayServer.is_touchscreen_available():
 			hint_label.text = "在指针进入绿色区域时点击下方按钮确认"
 		else:
 			hint_label.text = "在指针进入绿色区域时按下 [空格键] 确认"
@@ -129,7 +129,7 @@ func _process(delta):
 		_check_result()
 
 	# 移动端：点击屏幕任意位置或触控按钮
-	if Input.is_action_just_pressed("ui_accept") or (OS.has_touchscreen_ui_hint() and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+	if Input.is_action_just_pressed("ui_accept") or (DisplayServer.is_touchscreen_available() and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		_check_result()
 
 
@@ -205,7 +205,7 @@ func _build_touch_button() -> void:
 func _show_touch_button(show: bool) -> void:
 	if not is_instance_valid(_touch_btn):
 		return
-	_touch_btn.visible = show and OS.has_touchscreen_ui_hint()
+	_touch_btn.visible = show and DisplayServer.is_touchscreen_available()
 	if show:
 		var vp_size := get_viewport().get_visible_rect().size
 		_touch_btn.position = Vector2((vp_size.x - 200) / 2, vp_size.y * 0.72)

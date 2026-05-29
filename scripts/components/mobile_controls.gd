@@ -36,7 +36,7 @@ func _ready() -> void:
 
 
 func _detect_platform() -> void:
-	var hint = OS.has_touchscreen_ui_hint()
+	var hint = DisplayServer.is_touchscreen_available()
 	var screen_small = get_viewport().get_visible_rect().size.x < 900
 	var is_web = OS.get_name() == "Web"
 	_enabled = hint or screen_small or is_web or _has_mobile_user_agent()
